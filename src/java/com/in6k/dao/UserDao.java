@@ -1,6 +1,6 @@
 package com.in6k.dao;
 
-import com.in6k.user.User;
+import com.in6k.entity.User;
 import com.in6k.hibernate.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

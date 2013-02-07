@@ -10,10 +10,29 @@
         <servlet-class>com.in6k.servlet.UserServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>AccountServlet</servlet-name>
+        <servlet-class>com.in6k.servlet.AccountServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>TransactionServlet</servlet-name>
+        <servlet-class>com.in6k.servlet.TransactionServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/add_user</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>AccountServlet</servlet-name>
+        <url-pattern>/account</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TransactionServlet</servlet-name>
+        <url-pattern>/transaction</url-pattern>
+    </servlet-mapping>
 
 </web-app>

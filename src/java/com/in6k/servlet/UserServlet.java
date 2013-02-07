@@ -9,12 +9,26 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.in6k.dao.UserDao;
-import com.in6k.user.User;
+import com.in6k.entity.User;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 public class UserServlet extends HttpServlet {
     private final Log logger = LogFactory.getLog(getClass());
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List usersList = null;
+
+        try {
+            usersList = UserDao.getAll();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        request.setAttribute("usersList", usersList);
+        request.getRequestDispatcher("index.jsp").include(request,response);
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,10 +47,9 @@ public class UserServlet extends HttpServlet {
         boolean isUserValidate = errorsList.size() != 0;
 
         if(!isUserValidate) {
-            user.save();
+            UserDao.save(user);
         }
 
-//           user.save();
         try {
             usersList = UserDao.getAll();
         } catch (SQLException e) {

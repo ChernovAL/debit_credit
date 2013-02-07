@@ -22,14 +22,20 @@
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
       <column name="name" sqlType="VARCHAR" length="100" precision="0" nullable="true" jdbcType="12" />
       <column name="user_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
-      <column name="type_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="cash" sqlType="DOUBLE" length="22" precision="0" nullable="true" jdbcType="8" />
       <primary-key name="PRIMARY" columns="id" />
     </table>
     <table name="transactions" schema="" catalog="account" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
-      <column name="debit_account" sqlType="DOUBLE" length="22" precision="0" nullable="true" jdbcType="8" />
-      <column name="credit_account" sqlType="DOUBLE" length="22" precision="0" nullable="true" jdbcType="8" />
+      <column name="debit_account" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="credit_account" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
       <column name="sum" sqlType="DOUBLE" length="22" precision="0" nullable="true" jdbcType="8" />
+      <primary-key name="PRIMARY" columns="id" />
+    </table>
+    <table name="users" schema="" catalog="account" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
+      <column name="name" sqlType="VARCHAR" length="100" precision="0" nullable="true" jdbcType="12" />
+      <column name="type" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
       <primary-key name="PRIMARY" columns="id" />
     </table>
     <table name="employees" schema="" catalog="employees" type="TABLE">
