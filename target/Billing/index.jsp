@@ -2,7 +2,6 @@
 <%@ taglib uri = "http://java.sun.com/jstl/core" prefix = "c"%>
 <html>
 <head>
-    <title>Users.</title>
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css"/>
     <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -33,7 +32,7 @@
         <tr>
             <th>#</th>
             <th>Name</th>
-            <th>Type</th>
+            <%--<th>Type</th>--%>
         </tr>
         </thead>
         <tbody>
@@ -41,7 +40,7 @@
             <tr>
                 <td><c:out value="${user.id }"></c:out></td>
                 <td><c:out value="${user.name}"></c:out></td>
-                <td><c:out value="${user.type}"></c:out></td>
+                <%--<td><c:out value="${user.type}"></c:out></td>--%>
             </tr>
         </c:forEach>
         </tbody>
@@ -61,10 +60,10 @@
         <fieldset>
             <label>User name:</label>
             <input type="text" class="input-large" placeholder="insert name" name="user_name"></br>
-            User type:
-            <input type="radio" name="user_type" value="client" checked="checked"> client
-            <input type="radio" name="user_type" value="system"> system</br>
-            <button type="submit" class="btn btn-success">Add</button>
+            <%--User type:--%>
+            <%--<input type="radio" name="user_type" value="client" checked="checked"> client--%>
+            <%--<input type="radio" name="user_type" value="system"> system</br>--%>
+            <button type="submit" class="btn">Add</button>
         </fieldset>
     </form>
 </div>

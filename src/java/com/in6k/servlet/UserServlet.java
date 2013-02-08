@@ -32,9 +32,6 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        logger.info(request.getParameter("user_name"));
-        logger.info(request.getParameterValues("user_type")[0]);
-
         List errorsList = null;
 
         List usersList = null;

@@ -36,4 +36,20 @@ public class UserDao {
         return list;
     }
 
+    public static User getTransactionById(int id) throws SQLException {
+        Session session = null;
+        User user = null;
+        try {
+            session = HibernateUtil.getInstance().openSession();
+            user = (User) session.load(User.class, id);
+        } catch (Exception e) {
+            e.getMessage();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return user;
+    }
+
 }
